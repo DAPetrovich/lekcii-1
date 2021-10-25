@@ -13,8 +13,7 @@ while x <= 4:
         graf_len[x][y] = temp
         y = y + 1
     x = x + 1
-#Вашу блин мать
-a=1200
+#Вашу блин мать a=1200
 
 otvet = '(0,2) '
 length = 0
