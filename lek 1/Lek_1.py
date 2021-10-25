@@ -13,7 +13,7 @@ while x <= 4:
         graf_len[x][y] = temp
         y = y + 1
     x = x + 1
-
+#tlfgsdfg
 otvet = '(0,2) '
 length = 0
 i=0
