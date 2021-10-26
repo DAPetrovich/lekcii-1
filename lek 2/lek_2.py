@@ -24,10 +24,10 @@ def CheckWin(): # пока проверка только по горизонта
                 k2 = 0
             
             if k1==5: 
-                messagebox.showinfo(' ', 'You Win')
+                messagebox.showinfo(' ', 'Win PC')
                 break
             if k2==5: 
-                messagebox.showinfo(' ', 'Win PC')
+                messagebox.showinfo(' ', 'You Win')
                 break
             j +=1
         i +=1
