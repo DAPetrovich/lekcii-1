@@ -4,36 +4,38 @@ from tkinter import messagebox
 
 listbutton=[]
 
-def CheckWin(): # пока проверка только по горизонтали. Очень криво) 
+def CheckWinLine(): # пока проверка только по горизонтали. Очень криво) 
     i=0
-    while i < 10:
+    while i < 10: # цикл по столбцам кнопок
         j=0
-        k1=0
-        k2=0
-        while j<10:
-            bt=listbutton[i][j]
-            if str(bt['text']) == '0':
-                k1 +=1
-            if str(bt['text']) != '0':
-                k1 = 0
-
-            if str(bt['text']) == '1':
-                k2 +=1
-            if str(bt['text']) != '1':
-                k2 = 0
-            
-            if k1==5: 
+        CounterLineUser=0   #счётчик пользователя по строкам
+        CounterLinePC=0     #счётчик ПК по строкам
+        CounterColumnUser=0 #счётчик пользователя по столбцам
+        CounterColumnPC=0   #счётчик ПК по столбцам
+        while j < 10:       # цикл по строке кнопок
+            btline = listbutton[i][j]
+            btcolumn = listbutton[j][i]
+            if str(btline['text']) == '0': CounterLineUser +=1 #
+            else: CounterLineUser = 0
+            if str(btline['text']) == 'X': CounterLinePC +=1
+            else: CounterLinePC = 0 
+            if str(btcolumn['text']) == '0': CounterColumnUser +=1 #
+            else: CounterColumnUser = 0
+            if str(btcolumn['text']) == 'X': CounterColumnPC +=1
+            else: CounterColumnPC = 0
+            if CounterLineUser==5 or CounterColumnUser==5: 
                 messagebox.showinfo(' ', 'Win PC')
-                break
-            if k2==5: 
+                exit()
+            if CounterLinePC==5 or CounterColumnPC==5: 
                 messagebox.showinfo(' ', 'You Win')
-                break
+                exit()
             j +=1
         i +=1
+
  
 def handlerButton(event,b1): #обработчик кнопок мы играем 0, компьютер X, ПК проверяет чтобы кнопка не была нажата до того как
     b1['text']='0'
-    CheckWin()   
+    CheckWinLine()
     while True:
         i=random.randint(0, 9)
         j=random.randint(0, 9)
@@ -43,7 +45,7 @@ def handlerButton(event,b1): #обработчик кнопок мы играе�
             break
     bt=listbutton[i][j]
     bt['text']='X'
-    CheckWin()
+    CheckWinLine()
 
 def CreatButton():  #создаём 100 кнопок
     i=0
