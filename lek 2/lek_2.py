@@ -12,7 +12,6 @@ def CheckWin(): # пока проверка только по горизонта
         k2=0
         while j<10:
             bt=listbutton[i][j]
-            print(bt['text'])
             if str(bt['text']) == '0':
                 k1 +=1
             if str(bt['text']) != '0':
@@ -31,9 +30,7 @@ def CheckWin(): # пока проверка только по горизонта
                 break
             j +=1
         i +=1
-        print('-------------------------')
-    print(k1, k2)
-
+ 
 def handlerButton(event,b1): #обработчик кнопок мы играем 0, компьютер 1, ПК проверяет чтобы кнопка не была нажата до того как
     b1['text']='0'
     CheckWin()   
