@@ -3,7 +3,7 @@ import random
 from tkinter import messagebox
 import numpy as np
 
-listbutton=[]
+listbutton=[] #type: list
 
 def CheckWinLine(LB): # Проверка горизонтальных и вертикальных прямых  
     i=0
@@ -93,6 +93,6 @@ def CreatButton():  #создаём 100 кнопок
 
 w1 = Tk()
 w1.geometry('350x400')
-w1.title('windows')
+w1.title('Крестики нолики')
 CreatButton()
 w1.mainloop()
