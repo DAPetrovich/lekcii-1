@@ -1,7 +1,7 @@
 from time import time
 import telebot
 from telebot import types
-bot=telebot.TeleBot("2010879791:AAH3c7s9NYQmltGCFSs6XEzSoU6f0Nz-mzg")
+bot=telebot.TeleBot("")
 
 DataBMK = []
 
