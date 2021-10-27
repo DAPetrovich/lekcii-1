@@ -4,7 +4,7 @@ from time import time
 import telebot
 import sqlite3
 from telebot import types
-bot=telebot.TeleBot("2010879791:AAH3c7s9NYQmltGCFSs6XEzSoU6f0Nz-mzg")
+bot=telebot.TeleBot("")
 
 conn = sqlite3.connect("database_bmk.db")
 cursor = conn.cursor()
