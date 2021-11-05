@@ -3,13 +3,14 @@ point_1=(2, 5)
 point_2=(5, 2)
 point_3=(6, 6)
 point_4=(8, 3)
-
-graf = [] 
+graf=[]
 graf.append(point_0)
 graf.append(point_1)
 graf.append(point_2)
 graf.append(point_3)
 graf.append(point_4)
+
+# graf = ((0,2),(2,5),(5,2),(6,6),(8,3))
 
 pyt =  [0,0,0,0,0]
 
