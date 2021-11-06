@@ -11,7 +11,6 @@ graf.append(point_3)
 graf.append(point_4)
 
 # graf = ((0,2),(2,5),(5,2),(6,6),(8,3))
-
 pyt =  [0,0,0,0,0]
 
 def length_AtoB(x, y):
