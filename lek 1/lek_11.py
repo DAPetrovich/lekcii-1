@@ -26,8 +26,8 @@ def vivod(pyt):
         length = length + length_AtoB(pyt[i-1], pyt[i])
         string = string + ' -> ' + str(graf[pyt[i]]) + '[' +str(length) + ']'
         i += 1
-    string = string + ' ->' + str(graf[pyt[0]])
     length = length + length_AtoB(pyt[i-1], pyt[0]) 
+    string = string + ' ->' + str(graf[pyt[0]]) + '[' + str(length) + ']'
     string = string + ' = ' + str(length)
     return string
 
