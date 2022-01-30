@@ -1,29 +1,36 @@
-graf = ((0,2),(2,5),(5,2),(6,6),(8,3))
-graf_len = [[0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]]
+graf=[(0, 2), (2, 5), (5, 2), (6, 6), (8, 3) ]
+pyt =  [0,0,0,0,0]
 
 def length_AtoB(x, y):
-    km = ((graf[y][0] - graf[x][0]) ** 2 + (graf[y][1] - graf[x][1]) ** 2)  ** 0.5
-    return(km)
+    return ((graf[y][0] - graf[x][0]) ** 2 + (graf[y][1] - graf[x][1]) ** 2)  ** 0.5
 
-for x in range(5):
-    for y in range(5) :
-        graf_len[x][y] = length_AtoB(x, y)
+def vivod(pyt):
+    string = str(graf[0])  
+    i=1
+    length = 0
+    while i < 5:
+        length += length_AtoB(pyt[i-1], pyt[i])
+        string += ' -> ' + str(graf[pyt[i]]) + '[' +str(length) + ']'
+        i += 1
+    length += length_AtoB(pyt[i-1], pyt[0]) 
+    string += ' ->' + str(graf[pyt[0]]) + '[' + str(length) + ']'
+    string += ' = ' + str(length)
+    return string
 
-otvet = str(graf[0])
-length = 0
-stroka = 0
-for i in range(4):
-    my_min=10000
-    for j in range(5):
-        if (graf_len[stroka][j] < my_min) and (stroka != j):
-            my_min = graf_len[stroka][j] # сохраняем длину минимального пути
-            ii=stroka # сохраняем индексы
-            jj=j      # сохраняем индексы
-    length = length + my_min
-    otvet = otvet + ' -> ' + str(graf[jj]) + '[' + str(length) + ']'
-    for z in range(5): graf_len[z][stroka] = 10000 # помечаем вершину чтобы не зайти в неё второй раз
-    stroka = jj # переходим на соседнюю вершину с минималным расстоянием
+def calculate():
+    min_pyt = 1000 # начальный путь космический
+    for i in range(5): # перебираем все возможные пути
+        for j in range(5):
+            for x in range(5):
+                for y in range(5):
+                    if (i != j) and (i != x) and (i !=y) and (j != x) and (j != y) and (x != y) and (i!=0)and (j!=0)and (x!=0)and (y!=0): # если не посещаем отну вершину дважды то считаем
+                        min_pyt_temp = length_AtoB(0,i) + length_AtoB(i,j) + length_AtoB(j,x) + length_AtoB(x,y) + length_AtoB(y,0)
+                        if min_pyt  > min_pyt_temp: # если новый путь короче старого то пересохраняемся
+                            min_pyt = min_pyt_temp                
+                            pyt[1] = i
+                            pyt[2] = j
+                            pyt[3] = x
+                            pyt[4] = y
+    return pyt
 
-length = length + length_AtoB(jj,0) 
-otvet = otvet + '-> ' + str(graf[0]) + '[' + str(length) + ']'
-print(otvet + ' = ' + str(length))
+print(vivod(calculate()))

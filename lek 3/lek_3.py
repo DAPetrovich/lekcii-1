@@ -241,8 +241,18 @@ InputPole2.place(x=650, y=150)
 
 label3 = Label(mw,text="  ", justify=LEFT)
 label3.place(x=450, y=250)
-InputPole3 = Entry(textvariable=StringVar(), width=30)
+InputPole3 = Entry(textvariable=StringVar(), width=30, name="bbb")
 InputPole3.place(x=650, y=250)
+
+mw.children['bbb'].place(x=150, y=150)
+#for _ in mw.children.items():
+#    print(_[1])
+#    _[1].place(x=650, y=150)
+
+# w1.children['bbb'].place(x=150, y=150)
+        #for _ in mw.children.items():
+        #    print(_[1])
+        #    _[1].place(x=650, y=150)
 
 bt=Button(mw, text='Вычислить', width=73, height=2, command=lambda x=mw: Rewenie(Vibor))
 bt.place(x=440, y=415)
