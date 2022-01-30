@@ -13,8 +13,7 @@ def vivod(pyt):
         string += ' -> ' + str(graf[pyt[i]]) + '[' +str(length) + ']'
         i += 1
     length += length_AtoB(pyt[i-1], pyt[0]) 
-    string += ' ->' + str(graf[pyt[0]]) + '[' + str(length) + ']'
-    string += ' = ' + str(length)
+    string += ' ->' + str(graf[pyt[0]]) + '[' + str(length) + ']' + ' = ' + str(length)
     return string
 
 def calculate():
