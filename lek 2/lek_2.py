@@ -97,7 +97,6 @@ def XodPC(LB):  # Шаг компьютера
             else:
                 bool = False
         slojnost += 1
-        print(slojnost)
     if slojnost==1000: 
         return True
     else: 
@@ -122,14 +121,14 @@ def CreatButton():  #создаём 100 кнопок
         while j<10:
            b1 = Button(w1, text='', width=2)
            b1.bind("<Button-1>", lambda event, b1=b1: handlerButton(event, b1))
-           b1.place(x=70 + j*20, y=100 + i*25)
+           b1.place(x=10 + j*20, y=10 + i*25)
            listbuttontemp.append(b1)
            j +=1
         listbutton.append(listbuttontemp)
         i += 1
 
 w1 = Tk()
-w1.geometry('350x400')
+w1.geometry('225x270')
 w1.title('Крестики нолики')
 CreatButton()
 w1.mainloop()
