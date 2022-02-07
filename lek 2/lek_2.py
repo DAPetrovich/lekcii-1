@@ -104,13 +104,15 @@ def XodPC(LB):  # Шаг компьютера
         return False
 
 def handlerButton(event,b1): #обработчик кнопок мы играем 0, компьютер X, ПК проверяет чтобы кнопка не была нажата до того как
-    b1['text']='0'
-    if CheckWinLine(listbutton, 1) or CheckWindiagonal(listbutton, 1): 
-        exit()
-    if XodPC(listbutton): # поиск хода случайным образом. 
-        FindXodPC(listbutton) # если не нашли ход рандомом то ищем по подряд
-    if CheckWinLine(listbutton, 1) or CheckWindiagonal(listbutton, 1): 
-        exit()
+
+    if (b1['text'] != '0') and (b1['text'] !='X'):
+        b1['text']='0'
+        if CheckWinLine(listbutton, 1) or CheckWindiagonal(listbutton, 1): 
+            exit()
+        if XodPC(listbutton): # поиск хода случайным образом. 
+            FindXodPC(listbutton) # если не нашли ход рандомом то ищем по подряд
+        if CheckWinLine(listbutton, 1) or CheckWindiagonal(listbutton, 1): 
+            exit()
 
 def CreatButton():  #создаём 100 кнопок
     i=0
