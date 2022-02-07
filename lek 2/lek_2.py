@@ -85,7 +85,7 @@ def computer_move_line(): # Шаг компьютера проверкой по�
 def computer_move_random():  # Шаг компьютера случайным образом
     bool = True
     complexity = 0
-    while bool and complexity < 1000:
+    while bool and (complexity < 10000):
         i=random.randint(0, 9)
         j=random.randint(0, 9)
         bt=game_array[i][j]
@@ -97,7 +97,7 @@ def computer_move_random():  # Шаг компьютера случайным о
             else:
                 bool = False
         complexity += 1
-    if complexity==1000: 
+    if complexity==10000: 
         return True
     else: 
         return False
